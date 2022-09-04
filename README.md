@@ -1,4 +1,4 @@
-<h1>Cappie, Cat, and Mike Wazowski!<br>
+#Cappie, Cat, and Mike Wazowski!<br>
             ／＞　 フ<br>
            | 　_　_| <br>
          ／` ミ＿xノ <br>
