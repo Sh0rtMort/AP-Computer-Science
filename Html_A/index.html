@@ -48,7 +48,8 @@
                 <form class="form form-signup">
                     <fieldset>
                         <div class="cat-photo">
-                            <img src="https://bit.ly/fcc-relaxing-cat" height="200px" width="200px" alt="supposed to be a funny cat">
+                            <img src="https://bit.ly/fcc-relaxing-cat" height="200px" width="200px"
+                                alt="supposed to be a funny cat">
                         </div>
                         <div id="gay-cat" class="gay-cat">This cat is special</div>
                     </fieldset>
@@ -69,14 +70,77 @@
                 <img id="image" src="" alt="Supposed to be a dog lol">
             </div>
 
-        <div>
-        <h2 class="email-value" id="email-value">Email:</h2>            
+            <div>
+                <h2 class="email-value" id="email-value">Email:</h2>
+            </div>
+            <div>
+                <h2 class="password-value" id="password-value">Password:</h2>
+            </div>
+            <div class="container3">
+                <div draggable="true" class="box">M</div>
+                <div draggable="true" class="box">A</div>
+                <div draggable="true" class="box">T</div>
+                <div draggable="true" class="box">H</div>
+                <div draggable="true" class="box">S</div>
+            </div>
+            <button class="match_check" id="match_check">Check Answers</button>
         </div>
-        <div>
-        <h2 class="password-value" id="password-value">Password:</h2>
+        <div class="adjust_text">Adjust Size of circle</div>
+        <div class="sliders">
+            <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10" list="size_range" oninput="rangeValue.innerText = this.value">
+            <datalist id="size_range">
+                <option>0</option>
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+                <option>60</option>
+                <option>70</option>
+                <option>80</option>
+                <option>90</option>
+                <option>100</option>
+                </datalist>
+                
+                <p id="rangeValue" class="rangeValue">50</p>
+
+        <!-- make a selection system to select what shape to draw -->
+        <div class="shape_select">
+            <select id="shape_select">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+                <option value="triangle">Triangle</option>
+            </select>
+        
+        <div class="adjust_text">Adjust Canvas Background</div>
+        <input type="range" min="0" max="100" value="50" class="slider2" id="myRange2" step="10" list="size_range2" oninput="changeValue()">
+        <datalist id="size_range2">
+            <option>0</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+            <option>60</option>
+            <option>70</option>
+            <option>80</option>
+            <option>90</option>
+            <option>100</option>
+            <option></option>
+            </datalist>
+
+            <p id="rangeValue2" class="rangeValue2">Cyan</p>
         </div>
+        <div class="container_circle">
+            <div class="button">
+                <button class="circleBtn" id="circleBtn" onclick="drawCircle2()">Click to make circle</button>
+            </div>
+            <canvas class="canvas" id="canvas" width="400" height="200"></canvas>
         </div>
     </section>
+
+    
+    </div>
     <script src="./script.js"></script>
 </body>
 

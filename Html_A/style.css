@@ -6,13 +6,13 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);; 
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right, #343a40, #2b2c31, #211f22, #151314, #000000);; 
   height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   
 }
 
@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 35%;
 }
 
 /* i love you more <3 */
@@ -357,7 +358,8 @@ body {
   border-radius: 6px;
   padding: 30px;
   margin: 0 15px;
-  background: linear-gradient(45deg, #a7e245, blue);
+  /* background: linear-gradient(45deg, #a7e245, blue); */
+  background: linear-gradient(45deg, rgb(175, 175, 175), rgb(84, 84, 84));
   box-shadow: navy 0px 0px 10px 0px;
   margin-bottom: 15%;
 }
@@ -437,6 +439,7 @@ body {
 .container .email-value {
   margin-top: 15%;
   margin-left: 40%;
+  margin-right: auto;
   font-size: 20px;
   color: #000000;
   display: none;
@@ -444,6 +447,7 @@ body {
 
 .container .password-value {
   margin-left: 29%;
+  margin-right: auto;
   font-size: 20px;
   color: #000000;
   display: none;
@@ -460,7 +464,7 @@ body {
 	border-radius: 25px;
 	border: none;
   margin-bottom: 10px;
-  animation: rainbow 3s ease-in-out infinite alternate;
+  animation: breath 3s ease-in infinite alternate;
 }
 
 .tester:hover {
@@ -487,37 +491,126 @@ body {
   }
 }
 
-@keyframes rainbow {
+@keyframes breath {
   0% {
-    background: inherit;
+    background: rgb(41, 41, 41);
   }
 
-  16% {
-    background: red;
+  10% {
+    background: rgb(93, 92, 92);
   }
 
-  32% {
-    background: orange;
+  20% {
+    background: rgb(156, 156, 156);
   }
 
-  48% {
-    background: yellow;
-  }
-
-  64% {
-    background: green;
-  }
-
-  80% {
-    background: blue;
-  }
-
-  100% {
-    background: purple;
+  30% {
+    background: lightgrey;
   }
 }
 
+.container3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
 
+.box {
+  margin-top: 50px;
+  border: 3px solid blue;
+  background-color: cyan;
+  border-radius: .5em;
+  padding: 10px;
+  cursor: move;
+}
+
+.slider {
+  margin-bottom: 10px;
+  width: 200px;
+  color: white;
+  background: #fcfcfc;
+  border-radius: 20px;
+}
+
+.rangeValue {
+  display: inline-block;
+  width: 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.slider2 {
+  margin-bottom: 10px;
+  width: 200px;
+  color: white;
+  background: #fcfcfc;
+  border-radius: 20px;
+}
+
+.rangeValue2 {
+  display: inline-block;
+  width: 0px;
+  text-align: center;
+  color: cyan;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: cyan 0px 0px 10px;
+}
+
+.slider2 {
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.canvas {
+  border: 1px solid blue;
+  box-shadow: blueviolet 0px 0px 10px 0px;
+  margin-bottom: 10%;
+  background-color: yellow;
+}
+
+.match_check {
+  font-size: 20px;
+  border-radius: 25px;
+  animation: breath 2s ease-out infinite alternate;
+  margin-left: 27%;
+  margin-top: 20px;
+  border: none;
+}
+
+.match_check:hover {
+  background-color: #FFFF33;
+  animation: null;
+  transition: all .3s ease-out;
+  box-shadow: #FFFF33 0px 0px 10px 0px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.adjust_text {
+  margin-top: 1px;
+  color: #cddbef;
+}
+
+.circleBtn {
+  margin-left: 32%;
+  margin-bottom: 5%;
+  border-radius: 40px;
+  border: 1px solid purple;
+  background-color: purple;
+  color: #000;
+}
+
+
+.circleBtn:hover {
+  background-color: #FFFF33;
+  box-shadow: #FFFF33 0px 0px 10px 0px ;
+  transition: all 2s ease-out;
+  /* transform: rotate(360deg); */
+  cursor: pointer;
+}
 
 
 

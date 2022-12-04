@@ -50,7 +50,6 @@ function hide() {
   document.getElementById('header2').style.display = 'none';
 }
 
-//print the data from email and password  
 function saveData() {
   var email = document.getElementById('login-email').value;
   var password = document.getElementById('login-password').value;
@@ -79,6 +78,221 @@ function drop(ev) {
 }
 
 
+document.addEventListener('DOMContentLoaded', (event) => {
+
+  
+function handleDrop(e) {
+  e.stopPropagation(); // stops the browser from redirecting.
+
+  if (dragSrcEl !== this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+  }
+  
+  return false;
+}
+
+  function handleDragStart(e) {
+    this.style.opacity = '0.4';
+
+    
+  dragSrcEl = this;
+
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+  }
+
+  function handleDragEnd(e) {
+    this.style.opacity = '1';
+
+    items.forEach(function (item) {
+      item.classList.remove('over');
+    });
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    return false;
+  }
+
+  function handleDragEnter(e) {
+    this.classList.add('over');
+  }
+
+  function handleDragLeave(e) {
+    this.classList.remove('over');
+  }
+
+  let items = document.querySelectorAll('.container3 .box');
+  items.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
+  });
+  
+
+  var container = document.querySelector('.container3');
+  for (var i = container.children.length; i >= 0; i--) {
+    container.appendChild(container.children[Math.random() * i | 0]);
+  }
+
+  // make an array that saves the order of the boxes after randomizing
+  var order = [];
+  for (var i = 0; i < items.length; i++) {
+    order.push(items[i].innerHTML);
+  }
+
+  console.log(order);
+
+  //make it so the user can click the button to check if the boxes are in the correct order
+  document.getElementById('match_check').addEventListener('click', function() {
+    var correct = true;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].innerHTML != order[i]) {
+        correct = false;
+      }
+    }
+    if (correct) {
+      alert('You got it right!');
+    } else {
+      alert('Try again!');
+    }
+  });
+});
+
+
+
+// make it so a slider will adjust the size of the circle
+function drawCircle2() {
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var slider = document.getElementById('myRange');
+  var sliderColor = document.getElementById('myRange2');
+  var size = slider.value;
+  var color = sliderColor.value;
+
+
+  switch (color) {
+    case "0":
+      ctx.fillStyle = "white";
+      ctx.strokeStyle = "white";
+    case "10":
+      ctx.fillStyle = "red";
+      ctx.strokeStyle = "red";
+      break;
+    case "20":
+      ctx.fillStyle = "orange";
+      ctx.strokeStyle = "orange";
+      break;
+    case "30":
+      ctx.fillStyle = "yellow";
+      ctx.strokeStyle = "yellow";
+      break;
+    case "40":
+      ctx.fillStyle = "green";
+      ctx.strokeStyle = "green";
+      break;
+    case "50":
+      ctx.fillStyle = "cyan";
+      ctx.strokeStyle = "cyan";
+      break;
+    case "60":
+      ctx.fillStyle = "blue";
+      ctx.strokeStyle = "blue";
+      break;
+    case "70":
+      ctx.fillStyle = "pink";
+      ctx.strokeStyle = "pink";
+      break;
+    case "80":
+      ctx.fillStyle = "purple";
+      ctx.strokeStyle = "purple";
+      break;
+    case "90":
+      ctx.fillStyle = "grey";
+      ctx.strokeStyle = "grey";
+      break;
+    case "100":
+      ctx.fillStyle = "black";
+      ctx.strokeStyle = "black";
+      break;
+  }
+
+  ctx.beginPath();
+  ctx.arc(canvas.width / 2, canvas.height / 2, size, 0, 2 * Math.PI);
+  ctx.rect(canvas.width / 2, canvas.height / 2, size, 0, 2);
+  ctx.stroke();
+  //ctx.fill();
+}
+
+//make the slider change the value of rangeValue2 to be a string
+function changeValue() {
+  var slider = document.getElementById('myRange2');
+  var rangeValue2 = document.getElementById('rangeValue2');
+  rangeValue2.innerHTML = slider.value;
+
+  switch (slider.value) {
+    case '0':
+      rangeValue2.innerHTML = 'White';
+      rangeValue2.style.color = 'white';
+      rangeValue2.style.textShadow = '0px 0px 10px white';
+      break;
+    case '10':
+      rangeValue2.innerHTML = 'Red';
+      rangeValue2.style.color = 'red';
+      rangeValue2.style.textShadow = '0px 0px 10px red';
+      break;
+    case '20':
+      rangeValue2.innerHTML = 'Orange';
+      rangeValue2.style.color = 'orange';
+      rangeValue2.style.textShadow = '0px 0px 10px orange';
+      break;
+    case '30':
+      rangeValue2.innerHTML = 'Yellow';
+      rangeValue2.style.color = 'yellow';
+      rangeValue2.style.textShadow = '0px 0px 10px yellow';
+      break;
+    case '40':
+      rangeValue2.innerHTML = 'Green';
+      rangeValue2.style.color = 'green';
+      rangeValue2.style.textShadow = '0px 0px 10px green';
+      break;
+    case '50':
+      rangeValue2.innerHTML = 'Cyan';
+      rangeValue2.style.color = 'cyan';
+      rangeValue2.style.textShadow = '0px 0px 10px cyan';
+      break;
+    case '60':
+      rangeValue2.innerHTML = 'Blue';
+      rangeValue2.style.color = 'blue';
+      rangeValue2.style.textShadow = '0px 0px 10px blue';
+      break;
+    case '70':
+      rangeValue2.innerHTML = 'Pink';
+      rangeValue2.style.color = 'pink';
+      rangeValue2.style.textShadow = '0px 0px 10px pink';
+      break;
+    case '80':
+      rangeValue2.innerHTML = 'Purple';
+      rangeValue2.style.color = 'purple';
+      rangeValue2.style.textShadow = '0px 0px 10px purple';
+      break;
+    case '90':
+      rangeValue2.innerHTML = 'Grey';
+      rangeValue2.style.color = 'grey';
+      rangeValue2.style.textShadow = '0px 0px 10px grey';
+      break;
+    case '100':
+      rangeValue2.innerHTML = 'Black';
+      rangeValue2.style.color = 'black';
+      rangeValue2.style.textShadow = '0px 0px 10px goldenrod';
+      break;
+  }   
+} 
+
 // function printNumbers() {
 //   var i = 1;
 
@@ -91,3 +305,33 @@ function drop(ev) {
 //   }
 //   print();
 // }
+
+
+// change the color of the slider as it moves
+// function changeColor() {
+//   var slider = document.getElementById("myRange");
+//   var output = document.getElementById("demo");
+//   output.innerHTML = slider.value;
+//   if (slider.value < 33) {
+//     slider.style.background = "red";
+//   } else if (slider.value < 66) {
+//     slider.style.background = "yellow";
+//   } else {
+//     slider.style.background = "green";
+//   }
+// }
+
+// function changeCanvasColor() {
+//   var canvas = document.getElementById("canvas");
+//   var ctx = canvas.getContext("2d");
+//   var slider = document.getElementById("myRange2");
+
+//   //change the color of the canvas based on the value of the slider
+//   if (slider.value < 33) {
+//     canvas.fillStyle = "red";
+//   } else if (slider.value < 66) {
+//     canvas.fillStyle = "yellow";
+//   } else {
+//     canvas.fillStyle = "green";
+//   }
+// } 
