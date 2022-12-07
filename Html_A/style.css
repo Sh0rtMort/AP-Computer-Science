@@ -564,10 +564,10 @@ body {
 
 
 .canvas {
-  border: 1px solid blue;
-  box-shadow: blueviolet 0px 0px 10px 0px;
+  border: 1px solid transparent;
+  box-shadow: transparent 0px 0px 10px 0px;
   margin-bottom: 10%;
-  background-color: yellow;
+  background-color: transparent;
 }
 
 .match_check {
@@ -660,6 +660,19 @@ body {
   color: #cddbef;
   margin-bottom: 5px;
   margin-top: 15px;
+}
+
+.clearCan {
+  background-color: grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+.clearCan:hover {
+  cursor: pointer;
+  transition: all 1 ease;
+  transform: scale(1.1);
 }
 
 /* 

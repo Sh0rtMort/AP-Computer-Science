@@ -315,68 +315,90 @@ function changeValue2() {
       rangeValue.style.color = 'white';
       rangeValue.style.textShadow = '0px 0px 10px white';
       document.getElementById('canvas').style.backgroundColor = 'white';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px white';
       break;
     case '10':
       rangeValue.innerHTML = 'Red';
       rangeValue.style.color = 'red';
       rangeValue.style.textShadow = '0px 0px 10px red';
       document.getElementById('canvas').style.backgroundColor = 'red';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px red';
       break;
     case '20':
       rangeValue.innerHTML = 'Orange';
       rangeValue.style.color = 'orange';
       rangeValue.style.textShadow = '0px 0px 10px orange';
       document.getElementById('canvas').style.backgroundColor = 'orange';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px orange';
       break;
     case '30':
       rangeValue.innerHTML = 'Yellow';
       rangeValue.style.color = 'yellow';
       rangeValue.style.textShadow = '0px 0px 10px yellow';
       document.getElementById('canvas').style.backgroundColor = 'yellow';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px yellow';
       break;
     case '40':
       rangeValue.innerHTML = 'Green';
       rangeValue.style.color = 'green';
       rangeValue.style.textShadow = '0px 0px 10px green';
       document.getElementById('canvas').style.backgroundColor = 'green';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px green';
       break;
     case '50':
       rangeValue.innerHTML = 'Cyan';
       rangeValue.style.color = 'cyan';
       rangeValue.style.textShadow = '0px 0px 10px cyan';
       document.getElementById('canvas').style.backgroundColor = 'cyan';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px cyan';
       break;
     case '60':
       rangeValue.innerHTML = 'Blue';
       rangeValue.style.color = 'blue';
       rangeValue.style.textShadow = '0px 0px 10px blue';
       document.getElementById('canvas').style.backgroundColor = 'blue';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px blue';
       break;
     case '70':
       rangeValue.innerHTML = 'Pink';
       rangeValue.style.color = 'pink';
       rangeValue.style.textShadow = '0px 0px 10px pink';
       document.getElementById('canvas').style.backgroundColor = 'pink';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px pink';
       break;
     case '80':
       rangeValue.innerHTML = 'Purple';
       rangeValue.style.color = 'purple';
       rangeValue.style.textShadow = '0px 0px 10px purple';
       document.getElementById('canvas').style.backgroundColor = 'purple';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px purple';
       break;
     case '90':
       rangeValue.innerHTML = 'Grey';
       rangeValue.style.color = 'grey';
       rangeValue.style.textShadow = '0px 0px 10px grey';
       document.getElementById('canvas').style.backgroundColor = 'grey';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px grey';
       break;
     case '100':
       rangeValue.innerHTML = 'Black';
       rangeValue.style.color = 'black';
       rangeValue.style.textShadow = '0px 0px 10px goldenrod';
       document.getElementById('canvas').style.backgroundColor = 'black';
+      document.getElementById('canvas').style.boxShadow = '0px 0px 10px 0px black';
       break;
   }   
+}
+
+function clearCanvas() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+
+
+  //make it so the button clears the canvas
+
 
 }
 
