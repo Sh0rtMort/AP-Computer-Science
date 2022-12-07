@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 35%;
+  margin-top: 55%;
 }
 
 /* i love you more <3 */
@@ -530,23 +530,26 @@ body {
   color: white;
   background: #fcfcfc;
   border-radius: 20px;
+  margin-left: -5%;
 }
 
 .rangeValue {
   display: inline-block;
   width: 0px;
-  text-align: center;
-  color: #fff;
+  color: cyan;
   font-size: 20px;
   font-weight: bold;
+  text-shadow: cyan 0px 0px 10px;
+
 }
 
 .slider2 {
   margin-bottom: 10px;
   width: 200px;
   color: white;
-  background: #fcfcfc;
+  background: linear-gradient(0deg, red, lime);
   border-radius: 20px;
+  margin-left: -5%;
 }
 
 .rangeValue2 {
@@ -559,10 +562,6 @@ body {
   text-shadow: cyan 0px 0px 10px;
 }
 
-.slider2 {
-  margin-bottom: 10px;
-  width: 200px;
-}
 
 .canvas {
   border: 1px solid blue;
@@ -592,6 +591,14 @@ body {
 .adjust_text {
   margin-top: 1px;
   color: #cddbef;
+  margin-left: -5%;
+  
+}
+
+.adjust_text2 {
+  margin-top: 5px;
+  color: #cddbef;
+  margin-left: 15%;
 }
 
 .circleBtn {
@@ -612,8 +619,48 @@ body {
   cursor: pointer;
 }
 
+.shape_selecter {
+  background-color: inherit;
+  background-color: #000;
+  margin-left: 25%;
+  margin-bottom: 10px;
+  transition: ease-out 0.3s;
+  color: #eef9fe;
+  border: 1px dotted #42FBF2;
+  outline: none;
+  z-index: 1;
+}
 
+.shape_selecter:hover {
+  cursor: pointer;
+  color: #fff;
+}
 
+.slider3 {
+  margin-bottom: 10px;
+  width: 200px;
+  color: white;
+  background: linear-gradient(0deg, red, lime);
+  border-radius: 20px;
+  margin-left: -5%;
+}
+
+.rangeValue3 {
+  /* margin-left: 20%; */
+  display: inline-block;
+  width: 0px;
+  text-align: center;
+  color: cyan;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: cyan 0px 0px 10px;
+}
+
+.adjust_text3 {
+  color: #cddbef;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
 
 /* 
 .container2 {

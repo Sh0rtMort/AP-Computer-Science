@@ -9,8 +9,10 @@
         <meta charset="UTF-8">
         <title>Anim</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <!-- <link href="./TTT.css" rel="stylesheet"></link> -->
+        <link rel="stylesheet" href="./style.css">
+
     </head>
-    <link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -87,7 +89,8 @@
         </div>
         <div class="adjust_text">Adjust Size of circle</div>
         <div class="sliders">
-            <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10" list="size_range" oninput="rangeValue.innerText = this.value">
+            <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10" list="size_range"
+                oninput="rangeValue.innerText = this.value">
             <datalist id="size_range">
                 <option>0</option>
                 <option>10</option>
@@ -100,36 +103,57 @@
                 <option>80</option>
                 <option>90</option>
                 <option>100</option>
-                </datalist>
-                
-                <p id="rangeValue" class="rangeValue">50</p>
+            </datalist>
 
-        <!-- make a selection system to select what shape to draw -->
-        <div class="shape_select">
-            <select id="shape_select">
-                <option value="circle">Circle</option>
-                <option value="square">Square</option>
-                <option value="triangle">Triangle</option>
-            </select>
-        
-        <div class="adjust_text">Adjust Canvas Background</div>
-        <input type="range" min="0" max="100" value="50" class="slider2" id="myRange2" step="10" list="size_range2" oninput="changeValue()">
-        <datalist id="size_range2">
-            <option>0</option>
-            <option>10</option>
-            <option>20</option>
-            <option>30</option>
-            <option>40</option>
-            <option>50</option>
-            <option>60</option>
-            <option>70</option>
-            <option>80</option>
-            <option>90</option>
-            <option>100</option>
-            <option></option>
+            <p id="rangeValue" class="rangeValue">50</p>
+
+            <div class="shape_select">
+                <select class="shape_selecter" is="shape_selecter">
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+            <div class="adjust_text2">Adjust Shape Color</div>
+            <input type="range" min="0" max="100" value="50" class="slider2" id="myRange2" step="10" list="size_range2"
+                oninput="changeValue()">
+            <datalist id="size_range2">
+                <option>0</option>
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+                <option>60</option>
+                <option>70</option>
+                <option>80</option>
+                <option>90</option>
+                <option>100</option>
+                <option></option>
             </datalist>
 
             <p id="rangeValue2" class="rangeValue2">Cyan</p>
+
+            <div class="adjust_text3">Adjust Background Color</div>
+            <input type="range" min="0" max="100" value="50" class="slider3" id="myRange3" step="10" list="size_range3"
+                oninput="changeValue2()">
+            <datalist id="size_range3">
+                <option>0</option>
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+                <option>60</option>
+                <option>70</option>
+                <option>80</option>
+                <option>90</option>
+                <option>100</option>
+                <option></option>
+            </datalist>
+
+            <p id="rangeValue3" class="rangeValue3">Cyan</p>
+
         </div>
         <div class="container_circle">
             <div class="button">
@@ -138,10 +162,9 @@
             <canvas class="canvas" id="canvas" width="400" height="200"></canvas>
         </div>
     </section>
-
-    
     </div>
     <script src="./script.js"></script>
+    <!-- <script src="./TTT.js"></script> -->
 </body>
 
 </html>
@@ -152,7 +175,22 @@
 
 
 
-
+<!-- <section>
+            <h1 class="game--title">Tic Tac Toe</h1>
+            <div class="game--container">
+                <div data-cell-index="0" class="cell" id="block1"></div>
+                <div data-cell-index="1" class="cell" id="block2"></div>
+                <div data-cell-index="2" class="cell" id="block3"></div>
+                <div data-cell-index="3" class="cell" id="block4"></div>
+                <div data-cell-index="4" class="cell" id="block5"></div>
+                <div data-cell-index="5" class="cell" id="block6"></div>
+                <div data-cell-index="6" class="cell" id="block7"></div>
+                <div data-cell-index="7" class="cell" id="block8"></div>
+                <div data-cell-index="8" class="cell" id="block9"></div>
+            </div>
+            <h2 class="game--status"></h2>
+            <button class="game--restart">Restart Game</button>
+        </section> -->
 
 
 <!-- <div class="row">

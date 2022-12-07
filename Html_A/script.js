@@ -147,11 +147,13 @@ function handleDrop(e) {
 
   console.log(order);
 
+  var correctOrder = ['M', 'A', 'T', 'H', 'S'];
+
   //make it so the user can click the button to check if the boxes are in the correct order
   document.getElementById('match_check').addEventListener('click', function() {
     var correct = true;
     for (var i = 0; i < items.length; i++) {
-      if (items[i].innerHTML != order[i]) {
+      if (items[i].innerHTML != correctOrder[i]) {
         correct = false;
       }
     }
@@ -165,14 +167,18 @@ function handleDrop(e) {
 
 
 
-// make it so a slider will adjust the size of the circle
 function drawCircle2() {
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var slider = document.getElementById('myRange');
   var sliderColor = document.getElementById('myRange2');
+  var selecter = document.getElementById('shape_selecter');
   var size = slider.value;
   var color = sliderColor.value;
+
+  if (size == 0) {
+    size = size +1;
+  }
 
 
   switch (color) {
@@ -221,14 +227,19 @@ function drawCircle2() {
       break;
   }
 
+//make it so the button draws what ever shape is selected
+  // switch (selecter.value) {
+  //   case "circle":
+    
+  // }
+
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, size, 0, 2 * Math.PI);
   ctx.rect(canvas.width / 2, canvas.height / 2, size, 0, 2);
   ctx.stroke();
-  //ctx.fill();
+  // ctx.fill();
 }
 
-//make the slider change the value of rangeValue2 to be a string
 function changeValue() {
   var slider = document.getElementById('myRange2');
   var rangeValue2 = document.getElementById('rangeValue2');
@@ -293,6 +304,83 @@ function changeValue() {
   }   
 } 
 
+function changeValue2() {
+  var slider = document.getElementById('myRange3');
+  var rangeValue = document.getElementById('rangeValue3');
+  rangeValue.innerHTML = slider.value;
+
+  switch (slider.value) {
+    case '0':
+      rangeValue.innerHTML = 'White';
+      rangeValue.style.color = 'white';
+      rangeValue.style.textShadow = '0px 0px 10px white';
+      document.getElementById('canvas').style.backgroundColor = 'white';
+      break;
+    case '10':
+      rangeValue.innerHTML = 'Red';
+      rangeValue.style.color = 'red';
+      rangeValue.style.textShadow = '0px 0px 10px red';
+      document.getElementById('canvas').style.backgroundColor = 'red';
+      break;
+    case '20':
+      rangeValue.innerHTML = 'Orange';
+      rangeValue.style.color = 'orange';
+      rangeValue.style.textShadow = '0px 0px 10px orange';
+      document.getElementById('canvas').style.backgroundColor = 'orange';
+      break;
+    case '30':
+      rangeValue.innerHTML = 'Yellow';
+      rangeValue.style.color = 'yellow';
+      rangeValue.style.textShadow = '0px 0px 10px yellow';
+      document.getElementById('canvas').style.backgroundColor = 'yellow';
+      break;
+    case '40':
+      rangeValue.innerHTML = 'Green';
+      rangeValue.style.color = 'green';
+      rangeValue.style.textShadow = '0px 0px 10px green';
+      document.getElementById('canvas').style.backgroundColor = 'green';
+      break;
+    case '50':
+      rangeValue.innerHTML = 'Cyan';
+      rangeValue.style.color = 'cyan';
+      rangeValue.style.textShadow = '0px 0px 10px cyan';
+      document.getElementById('canvas').style.backgroundColor = 'cyan';
+      break;
+    case '60':
+      rangeValue.innerHTML = 'Blue';
+      rangeValue.style.color = 'blue';
+      rangeValue.style.textShadow = '0px 0px 10px blue';
+      document.getElementById('canvas').style.backgroundColor = 'blue';
+      break;
+    case '70':
+      rangeValue.innerHTML = 'Pink';
+      rangeValue.style.color = 'pink';
+      rangeValue.style.textShadow = '0px 0px 10px pink';
+      document.getElementById('canvas').style.backgroundColor = 'pink';
+      break;
+    case '80':
+      rangeValue.innerHTML = 'Purple';
+      rangeValue.style.color = 'purple';
+      rangeValue.style.textShadow = '0px 0px 10px purple';
+      document.getElementById('canvas').style.backgroundColor = 'purple';
+      break;
+    case '90':
+      rangeValue.innerHTML = 'Grey';
+      rangeValue.style.color = 'grey';
+      rangeValue.style.textShadow = '0px 0px 10px grey';
+      document.getElementById('canvas').style.backgroundColor = 'grey';
+      break;
+    case '100':
+      rangeValue.innerHTML = 'Black';
+      rangeValue.style.color = 'black';
+      rangeValue.style.textShadow = '0px 0px 10px goldenrod';
+      document.getElementById('canvas').style.backgroundColor = 'black';
+      break;
+  }   
+
+}
+
+
 // function printNumbers() {
 //   var i = 1;
 
@@ -323,7 +411,7 @@ function changeValue() {
 
 // function changeCanvasColor() {
 //   var canvas = document.getElementById("canvas");
-//   var ctx = canvas.getContext("2d");
+//   var ctx = canvas.getctx("2d");
 //   var slider = document.getElementById("myRange2");
 
 //   //change the color of the canvas based on the value of the slider
