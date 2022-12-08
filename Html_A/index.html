@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Animated Form</title>
+    <title>Midterm Project || Kaden Morton || AP Comp. Sci.</title>
 
     <head>
         <meta charset="UTF-8">
-        <title>Anim</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <!-- <link href="./TTT.css" rel="stylesheet"></link> -->
         <link rel="stylesheet" href="./style.css">
@@ -87,7 +86,7 @@
             </div>
             <button class="match_check" id="match_check">Check Answers</button>
         </div>
-        <div class="adjust_text">Adjust Size of circle</div>
+        <div class="adjust_text">Adjust Size of Shape</div>
         <div class="sliders">
             <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10" list="size_range"
                 oninput="rangeValue.innerText = this.value">
@@ -107,13 +106,6 @@
 
             <p id="rangeValue" class="rangeValue">50</p>
 
-            <div class="shape_select">
-                <select class="shape_selecter" is="shape_selecter">
-                    <option value="circle">Circle</option>
-                    <option value="square">Square</option>
-                    <option value="triangle">Triangle</option>
-                </select>
-            </div>
             <div class="adjust_text2">Adjust Shape Color</div>
             <input type="range" min="0" max="100" value="50" class="slider2" id="myRange2" step="10" list="size_range2"
                 oninput="changeValue()">
@@ -152,7 +144,20 @@
                 <option></option>
             </datalist>
 
-            <p id="rangeValue3" class="rangeValue3">Cyan</p>
+            <p id="rangeValue3" class="rangeValue3">Transparent</p>
+            
+
+            
+            <div class="shape_select">
+                <label for="CircleCheck">Draw Circle</label>
+                <input type="checkbox" name="CircleCheck" id="CircleCheck">
+                <div></div>
+                <label for="SquareCheck">Draw Square</label>
+                <input type="checkbox" name="SquareCheck" id="SquareCheck">
+                <div></div>
+                <label for="TriangleCheck">Draw Triangle</label>
+                <input type="checkbox" name="TriangleCheck" id="TriangleCheck">
+            </div>
 
         </div>
         <div class="container_circle">

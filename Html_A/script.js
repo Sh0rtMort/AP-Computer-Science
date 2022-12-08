@@ -227,16 +227,42 @@ function drawCircle2() {
       break;
   }
 
-//make it so the button draws what ever shape is selected
-  // switch (selecter.value) {
-  //   case "circle":
-    
-  // }
+  var checkboxC = document.getElementById('CircleCheck');
+  var checkboxR = document.getElementById('SquareCheck');
+  var checkboxT = document.getElementById('TriangleCheck');
 
-  ctx.beginPath();
-  ctx.arc(canvas.width / 2, canvas.height / 2, size, 0, 2 * Math.PI);
-  ctx.rect(canvas.width / 2, canvas.height / 2, size, 0, 2);
-  ctx.stroke();
+  if (checkboxC.checked == true) {
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, size, 0, 2 * Math.PI);
+    ctx.stroke();
+  } else if (checkboxR.checked == true) {
+    ctx.beginPath();
+    ctx.rect(canvas.width / 2, canvas.height / 2, size, size);
+    ctx.stroke();
+  } else if (checkboxT.checked == true) {
+    ctx.beginPath();
+    // draw a star
+    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+    ctx.lineTo(canvas.width / 2 + 50, canvas.height / 2 + 50);
+    ctx.lineTo(canvas.width / 2 - 50, canvas.height / 2 + 50);
+    ctx.lineTo(canvas.width / 2, canvas.height / 2);
+
+    ctx.stroke();
+  } else if (checkboxC == true && checkboxR == true && checkboxT == true) {
+    alert("Please select only one shape!");
+  }
+  else if (checkboxC.checked == false && checkboxR.checked == false && checkboxT.checked == false) {
+    alert("Please select a shape!");
+  } 
+
+  // ctx.beginPath();
+  // ctx.arc(canvas.width / 2, canvas.height / 2, size, 0, 2 * Math.PI);
+  // ctx.rect(canvas.width / 2, canvas.height / 2, size, 0, 2);
+  // ctx.moveTo(canvas.width / 2, canvas.height / 2);
+  // ctx.lineTo(canvas.width / 2 + size, canvas.height / 2 + size);
+  // ctx.lineTo(canvas.width / 2 - size, canvas.height / 2 + size);
+  // ctx.lineTo(canvas.width / 2, canvas.height / 2);
+  // ctx.stroke();
   // ctx.fill();
 }
 

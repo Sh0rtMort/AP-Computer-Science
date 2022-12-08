@@ -13,9 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-  
 }
-
 
 .forms-section {
   /* change this */
@@ -26,6 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 55%;
+  padding-bottom: 60px;
 }
 
 /* i love you more <3 */
@@ -619,16 +618,16 @@ body {
   cursor: pointer;
 }
 
-.shape_selecter {
+.shape_select {
   background-color: inherit;
-  background-color: #000;
-  margin-left: 25%;
   margin-bottom: 10px;
   transition: ease-out 0.3s;
   color: #eef9fe;
-  border: 1px dotted #42FBF2;
+  border: 1px solid #42FBF2;
+  border-right: none;
+  border-top: none;
   outline: none;
-  z-index: 1;
+  box-shadow: cyan -8px 8px 5px 0px;
 }
 
 .shape_selecter:hover {
@@ -667,13 +666,16 @@ body {
   border: 1px solid grey;
   border-radius: 5px;
   font-size: 2rem;
+  transition: all 0.2s ease-out;
 }
 
 .clearCan:hover {
   cursor: pointer;
-  transition: all 1 ease;
   transform: scale(1.1);
+  background-color: linear-gradient(0deg, red, lime);
+  box-shadow: #FFFF33 0px 0px 10px 0px;
 }
+
 
 /* 
 .container2 {
