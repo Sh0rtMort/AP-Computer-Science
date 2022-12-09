@@ -8,6 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CalcStyle.css">
         <!-- <link href="./TTT.css" rel="stylesheet"></link> -->
         <link rel="stylesheet" href="./style.css">
 
@@ -167,8 +168,43 @@
             <canvas class="canvas" id="canvas" width="400" height="200"></canvas>
         </div>
         <button type="reset" class="clearCan" id="clearCan" onclick="clearCanvas()">Clear Canvas</button>
+
+        <div class="container2">
+            <section id="displayArea">
+                <div class="currentInput"></div>
+                <div class="answerScreen"></div>
+            </section>
+        
+            <section class="keypadButtons">
+                <button type="button" class="fun_btn" id="clear" value="">C</button>
+                <button type="button" class="fun_btn" id="plusMinus" value="">±</button>
+                <button type="button" class="fun_btn" id="percent" value="%">%</button>
+                <button type="button" class="fun_btn" id="divide" value="/">÷</button>
+                
+                <button type="button" class="calc_btn" id="seven" value="7">7</button>
+                <button type="button" class="calc_btn" id="eight" value="8">8</button>
+                <button type="button" class="calc_btn" id="nine" value="9">9</button>
+                <button type="button" class="fun_btn" id="multiply" value="*">×</button>
+                <button type="button" class="calc_btn" id="four" value="4">4</button>
+                <button type="button" class="calc_btn" id="five" value="5">5</button>
+                <button type="button" class="calc_btn" id="six" value="6">6</button>
+                <button type="button" class="fun_btn" id="subtract" value="-">-</button>
+        
+                
+                <button type="button" class="calc_btn" id="one" value="1">1</button>
+                <button type="button" class="calc_btn" id="two" value="2">2</button>
+                <button type="button" class="calc_btn" id="three" value="3">3</button>
+                <button type="button" class="fun_btn" id="add" value="+">+</button>
+        
+                <button type="button" class="fun_btn" id="decimal" value=".">.</button>
+                <button type="button" class="calc_btn" id="zero" value="0">0</button>
+                <button type="button" class="fun_btn" id="erase" value="">⌫</button>
+                <button type="button" class="fun_btn" id="evaluate" value="=">=</button>
+                
+            </section>
     </section>
     </div>
+    <script src="CalcScript.js"></script>
     <script src="./script.js"></script>
     <!-- <script src="./TTT.js"></script> -->
 </body>
