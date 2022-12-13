@@ -54,12 +54,24 @@ function saveData() {
   var password = document.getElementById('login-password').value;
   console.log('email: ' + email + ' password: ' + password);
 
-  document.getElementById('email-value').innerHTML = "Email: " + email;
-  document.getElementById('password-value').innerHTML = "Password: " + password;
+  localStorage.setItem('email', email);
+  localStorage.setItem('password', password);
 
-  document.getElementById("email-value").style.display = "block";
+  var emailArray = [];
 
-  document.getElementById("password-value").style.display = "block";
+  //save the emails to an array and do not erase the previous emails
+  if (localStorage.getItem('emailArray') != null) {
+    emailArray = JSON.parse(localStorage.getItem('emailArray'));
+  }
+
+
+  emailArray.push(email);
+  localStorage.setItem('emailArray', JSON.stringify(emailArray));
+
+
+  document.getElementById("email-value").style.display = "none";
+
+  document.getElementById("password-value").style.display = "none";
 }
 
 function allowDrop(ev) {
@@ -73,7 +85,7 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+  ev.target.appendChild(document.getElementById(data))
 }
 
 
@@ -411,4 +423,12 @@ function clearCanvas() {
   const ctx = canvas.getContext('2d');
 
   ctx.clearRect(0,0, canvas.width, canvas.height);
+}
+
+//make a function that brings you to a new page
+function newPage() {
+  //bring you to index2
+  window.location.href = "index2.html";
+
+  //make it so the data from 
 }
